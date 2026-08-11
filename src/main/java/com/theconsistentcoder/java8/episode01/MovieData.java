@@ -1,7 +1,7 @@
 package com.theconsistentcoder.java8.episode01;
 
-import java.util.List;
 import java.util.Arrays;
+import java.util.List;
 
 public class MovieData {
 

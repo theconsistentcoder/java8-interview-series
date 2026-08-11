@@ -12,11 +12,8 @@ public class StreamCreationDemo {
 
         // Way 1: stream() — from a List
         System.out.println("--- Way 1: stream() ---");
-        Stream<Movie> stream1  = movies.stream();
-    //    stream1.forEach(m ->
-       //         System.out.println(m.getTitle() + " (" + m.getYear() + ")"));
-
-
+        Stream<Movie> s1 = movies.stream();
+        s1.forEach(m -> System.out.println(m.getTitle() + " (" + m.getYear() + ")"));
 
         // Way 2: Stream.of() — from individual objects
         System.out.println("\n--- Way 2: Stream.of() ---");
@@ -24,13 +21,12 @@ public class StreamCreationDemo {
                 new Movie(1, "Titanic", "Romance", 7.8, 1997, 195, true),
                 new Movie(2, "Avatar",  "Sci-Fi",  7.9, 2009, 162, true)
         );
-       // s2.forEach(m -> System.out.println(m.getTitle() + " | Genre: " + m.getGenre()));
+        s2.forEach(m -> System.out.println(m.getTitle() + " | Genre: " + m.getGenre()));
 
         // Way 3: Arrays.stream() — from an array
         System.out.println("\n--- Way 3: Arrays.stream() ---");
-        Movie[] arr = movies.toArray(new Movie[0]);
-        Stream<Movie> s3 = Arrays.stream(arr);
-        s3.forEach(m ->
-                System.out.println(m.getTitle() + " | Duration: " + m.getDuration() + " mins"));
-   }
+        Movie[] movieArray = movies.toArray(new Movie[0]);
+        Stream<Movie> s3 = Arrays.stream(movieArray);
+        s3.forEach(m -> System.out.println(m.getTitle() + " | Duration: " + m.getDuration() + " mins"));
+    }
 }

@@ -1,4 +1,4 @@
-package com.theconsistentcoder.java8.episode02;
+package com.theconsistentcoder.java8.episode01;
 
 public class Movie {
 

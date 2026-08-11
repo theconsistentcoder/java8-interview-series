@@ -1,12 +1,16 @@
 package com.theconsistentcoder.java8.episode02;
 
+import com.theconsistentcoder.java8.episode01.Movie;
+import com.theconsistentcoder.java8.episode01.MovieData;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class FilterMapDemo {
 
     public static void main(String[] args) {
-
+        System.out.println("-------------------");
+        System.out.println("-------------------");
         List<Movie> movies = MovieData.getMovies();
 
         // filter() — keep only Action movies
