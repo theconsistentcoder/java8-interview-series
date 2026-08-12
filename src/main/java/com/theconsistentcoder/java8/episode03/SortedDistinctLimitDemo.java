@@ -39,7 +39,7 @@ public class SortedDistinctLimitDemo {
                 .collect(Collectors.toList());
         System.out.println(genres);
 
-        // limit() — first 3 movies from list
+        //limit() — first 3 movies from list
         System.out.println("\n--- limit() — first 3 movies ---");
         List<String> first3 = movies.stream()
                 .map(Movie::getTitle)
