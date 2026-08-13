@@ -18,25 +18,25 @@ public class SkipCountPeekDemo {
                 .map(Movie::getTitle)
                 .skip(5)
                 .collect(Collectors.toList());
-        System.out.println(skipped);
+      // System.out.println(skipped);
 
         // count() — count available movies
-        System.out.println("\n--- count() — available movies ---");
+        //System.out.println("\n--- count() — available movies ---");
         long availableCount = movies.stream()
                 .filter(Movie::isAvailable)
                 .count();
-        System.out.println("Available movies: " + availableCount);
+      //  System.out.println("Available movies: " + availableCount);
 
         // peek() — debug mid-pipeline
-        System.out.println("\n--- peek() — debug pipeline ---");
+       // System.out.println("\n--- peek() — debug pipeline ---");
         List<String> result = movies.stream()
                 .filter(Movie::isAvailable)
-                .peek(m -> System.out.println("After filter: " + m.getTitle()))
+             //   .peek(m -> System.out.println("After filter: " + m.getTitle()))
                 .filter(m -> m.getRating() > 8.0)
-                .peek(m -> System.out.println("After rating filter: " + m.getTitle()))
+               // .peek(m -> System.out.println("After rating filter: " + m.getTitle()))
                 .map(Movie::getTitle)
                 .collect(Collectors.toList());
-        System.out.println("Final result: " + result);
+       // System.out.println("Final result: " + result);
 
         // skip() + limit() — pagination
         System.out.println("\n--- skip() + limit() — page 2 (3 per page) ---");
