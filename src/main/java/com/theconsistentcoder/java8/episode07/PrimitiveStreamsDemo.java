@@ -14,6 +14,8 @@ public class PrimitiveStreamsDemo {
 
         List<Movie> movies = MovieData.getMovies();
 
+        System.out.println("---------------------------");
+        System.out.println("---------------------------");
         // mapToInt() + sum() — total duration
         int totalDuration = movies.stream()
                 .mapToInt(Movie::getDuration)

@@ -21,7 +21,7 @@ public class MinMaxReduceDemo {
         // max() — longest movie
         Optional<Movie> longest = movies.stream()
                 .max(Comparator.comparingInt(Movie::getDuration));
-      //  longest.ifPresent(m -> System.out.println("Longest: " + m.getTitle() + " - " + m.getDuration() + " mins"));
+       longest.ifPresent(m -> System.out.println("Longest: " + m.getTitle() + " - " + m.getDuration() + " mins"));
 
         // max() — highest rated movie
         Optional<Movie> highestRated = movies.stream()
@@ -32,9 +32,9 @@ public class MinMaxReduceDemo {
         int totalDuration = movies.stream()
                 .map(Movie::getDuration)
                 .reduce(0, Integer::sum);
-       // System.out.println("Total duration: " + totalDuration + " mins");
+        System.out.println("Total duration: " + totalDuration + " mins");
 
         // reduce() — total duration in hours
-       // System.out.println("Total duration: " + totalDuration / 60 + " hrs " + totalDuration % 60 + " mins");
+        System.out.println("Total duration: " + totalDuration / 60 + " hrs " + totalDuration % 60 + " mins");
     }
 }
