@@ -13,7 +13,8 @@ public class CollectorsBasicsDemo {
     public static void main(String[] args) {
 
         List<Movie> movies = MovieData.getMovies();
-
+        System.out.println("------------");
+        System.out.println("------------");
         // toList() — collect titles to a List
         List<String> titleList = movies.stream()
                 .map(Movie::getTitle)
@@ -29,7 +30,7 @@ public class CollectorsBasicsDemo {
         // toMap() — id -> title
         Map<Integer, String> movieMap = movies.stream()
                 .collect(Collectors.toMap(Movie::getId, Movie::getTitle));
-        System.out.println("Map: " + movieMap);
+       System.out.println("Map: " + movieMap);
 
         // toMap() — title -> rating
         Map<String, Double> ratingMap = movies.stream()
