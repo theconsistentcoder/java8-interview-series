@@ -12,6 +12,8 @@ public class GroupingPartitioningDemo {
     public static void main(String[] args) {
 
         List<Movie> movies = MovieData.getMovies();
+        System.out.println("------------");
+        System.out.println("------------");
 
         // groupingBy() — group by genre
         Map<String, List<Movie>> byGenre = movies.stream()
@@ -35,10 +37,10 @@ public class GroupingPartitioningDemo {
         Map<Boolean, List<Movie>> byAvailability = movies.stream()
                 .collect(Collectors.partitioningBy(Movie::isAvailable));
 
-        System.out.println("Available: " +
-                byAvailability.get(true).stream().map(Movie::getTitle).collect(Collectors.toList()));
-        System.out.println("Not Available: " +
-                byAvailability.get(false).stream().map(Movie::getTitle).collect(Collectors.toList()));
+       System.out.println("Available: " +
+              byAvailability.get(true).stream().map(Movie::getTitle).collect(Collectors.toList()));
+       System.out.println("Not Available: " +
+              byAvailability.get(false).stream().map(Movie::getTitle).collect(Collectors.toList()));
 
         // partitioningBy() — rating above 8
         System.out.println();
@@ -47,7 +49,7 @@ public class GroupingPartitioningDemo {
                         m -> m.getRating() > 8.0,
                         Collectors.mapping(Movie::getTitle, Collectors.toList())
                 ));
-        System.out.println("Rating > 8 : " + byRating.get(true));
+       System.out.println("Rating > 8 : " + byRating.get(true));
         System.out.println("Rating <= 8: " + byRating.get(false));
     }
 }
